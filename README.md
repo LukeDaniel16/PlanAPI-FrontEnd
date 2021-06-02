@@ -1,5 +1,6 @@
 # Find my tasks! - Gerenciador tarefas
 ## Projeto para disciplina de Engenharia Web no curso de Ciência da Computação - 7º Período.
+
 * Colaboradores:
     * Danilo Mendes.
     * Lucas Daniel.
@@ -28,7 +29,14 @@ $ npm run start
 
 ```
 
-
+  ### Funcionalidades:
+  
+- [ ] Cadastro de usuário
+- [ ] Login de usuário
+- [ ] Criação de nota individual
+- [ ] Cadastro de projeto
+  
+  
 <h4 align="center"> 
   Status do projeto:<br> :computer: Find my tasks :white_check_mark: - Em desenvolvimento... :computer:
 </h4>

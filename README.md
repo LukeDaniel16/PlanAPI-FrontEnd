@@ -1,20 +1,44 @@
-# findMyTasks
+# Find my tasks! - Gerenciador tarefas
+## Projeto para disciplina de Engenharia Web no curso de Ciência da Computação - 7º Período.
 
-## Build Setup
+* Colaboradores:
+    * Danilo Mendes.
+    * Lucas Daniel.
+    * Vinícius Vieira.
+* Frameworks utilizados:
+  * Front-end:
+    * Vue.js
+    * Buefy
+    * Nuxt.JS
+  * Back-end:
+    * ASP.NET Core     
+    * ASP.NET WebAPI
+
+## Como rodar o projeto - Após clonar:
 
 ```bash
 # install dependencies
 $ npm install
 
-# serve with hot reload at localhost:3000
+# Rodar em server localHost 3000
 $ npm run dev
 
-# build for production and launch server
+# Rodar para produção
 $ npm run build
 $ npm run start
 
-# generate static project
-$ npm run generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+  ### Funcionalidades:
+  
+- [ ] Cadastro de usuário
+- [ ] Login de usuário
+- [ ] Criação de nota individual
+- [ ] Cadastro de projeto
+  
+  
+<h4 align="center"> 
+  Status do projeto:<br> :computer: Find my tasks :white_check_mark: - Em desenvolvimento... :computer:
+</h4>
+
+Para maiores detalhes, visite a documentação oficial do Nuxt.JS [Nuxt.js docs](https://nuxtjs.org).

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button>RALF RALF</button>
+    <Nuxt />
   </div>
 </template>
 

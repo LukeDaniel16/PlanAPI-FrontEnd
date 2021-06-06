@@ -11,14 +11,14 @@
         <b-navbar-item tag="div">
           <div class="buttons">
             <b-button
-              type="is-info is-outlined is-rounded"
+              type="is-primary is-outlined is-rounded"
               tag="nuxt-link"
               to="/cadastro/cadastrar"
             >
               <strong>Cadastre-se</strong></b-button
             >
             <b-button
-              type="is-info is-outlined is-rounded"
+              type="is-primary is-outlined is-rounded"
               tag="nuxt-link"
               to="/cadastro/entrar"
               >Entrar</b-button

@@ -6,22 +6,23 @@
           <p>Find my <i>tasks!</i></p>
         </b-navbar-item>
       </template>
-      <template #start>
-        <b-navbar-item tag="nuxt-link" to="/">Principal</b-navbar-item>
-        <b-navbar-item tag="nuxt-link" to="cadastro/login"
-          >Informações</b-navbar-item
-        >
-        <b-navbar-item tag="nuxt-link" to="/login">Sobre nós</b-navbar-item>
-      </template>
+      <template #start> </template>
       <template #end>
         <b-navbar-item tag="div">
           <div class="buttons">
-            <button class="button is-info is-outlined is-rounded">
-              <strong>Cadastre-se</strong>
-            </button>
-            <button class="button is-info is-outlined is-rounded">
-              Entrar
-            </button>
+            <b-button
+              type="is-info is-outlined is-rounded"
+              tag="nuxt-link"
+              to="/cadastro/cadastrar"
+            >
+              <strong>Cadastre-se</strong></b-button
+            >
+            <b-button
+              type="is-info is-outlined is-rounded"
+              tag="nuxt-link"
+              to="/cadastro/entrar"
+              >Entrar</b-button
+            >
           </div>
         </b-navbar-item>
       </template>

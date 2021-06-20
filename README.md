@@ -1,4 +1,4 @@
-# Find my tasks! - Gerenciador tarefas
+# Plan! - Gerenciador tarefas
 ## Projeto para disciplina de Engenharia Web no curso de Ciência da Computação - 7º Período.
 
 * Colaboradores:

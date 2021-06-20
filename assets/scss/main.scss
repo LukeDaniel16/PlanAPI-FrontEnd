@@ -6,6 +6,7 @@ $primary: #15364F;
 $primary-light: findLightColor($primary);
 $primary-dark: findDarkColor($primary);
 $primary-invert: findColorInvert($primary);
+$input-icon-active-color: #15364F;
 
 // Lists and maps
 $custom-colors: null !default;

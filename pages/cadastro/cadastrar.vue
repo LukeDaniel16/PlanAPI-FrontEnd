@@ -17,21 +17,26 @@
                 <b-input
                   placeholder="Ex: João de Barro"
                   maxlength="160"
+                  icon="user-tie"
                 ></b-input>
               </b-field>
               <b-field label="Apelido" label-position="inside" class="my-1">
-                <b-input placeholder="Joaozinho" maxlength="120"></b-input>
+                <b-input
+                  placeholder="Joaozinho"
+                  maxlength="120"
+                  icon="user-ninja"
+                ></b-input>
               </b-field>
               <b-field label="E-mail" label-position="inside" class="my-1">
                 <b-input
                   placeholder="joao.barro@gmail.com"
                   type="email"
                   maxlength="60"
-                  icon="envelope-square"
+                  icon="envelope"
                 ></b-input>
               </b-field>
               <b-field label="Senha" label-position="inside" class="my-1">
-                <b-input type="password" maxlength="30"></b-input>
+                <b-input type="password" maxlength="30" icon="key"></b-input>
               </b-field>
               <div class="block has-text-centered my-1">
                 <b-button

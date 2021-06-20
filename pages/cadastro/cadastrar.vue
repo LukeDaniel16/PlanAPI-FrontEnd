@@ -1,5 +1,5 @@
 <template>
-  <section class="section is-medium">
+  <section class="section has-background-primary tamanho-cadastro">
     <div class="container">
       <div class="columns is-mobile is-centered">
         <div class="column is-4">
@@ -82,8 +82,8 @@ export default {
 }
 </script>
 <style>
-body {
-  background-color: #15364f;
+.tamanho-cadastro {
+  min-height: 100vh;
 }
 small {
   font-size: 12px;

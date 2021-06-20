@@ -1,5 +1,5 @@
 <template>
-  <section class="section is-medium">
+  <section class="section has-background-primary tamanho-login">
     <div class="container">
       <div class="columns is-mobile is-centered">
         <div class="column is-4">
@@ -54,7 +54,7 @@ export default {
 }
 </script>
 <style>
-footer {
-  background-color: #15364f;
+.tamanho-login {
+  min-height: 100vh;
 }
 </style>

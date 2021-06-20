@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Find my tasks!',
+    title: 'Plan!',
     htmlAttrs: {
       lang: 'pt-br'
     },

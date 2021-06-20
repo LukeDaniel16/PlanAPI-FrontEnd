@@ -8,7 +8,7 @@
               <div class="column is-7">
                 <b-image
                   :src="require('@/assets/images/logoPLan1.png')"
-                  alt="PLan logo"
+                  alt="Plan logo"
                 ></b-image>
               </div>
             </div>

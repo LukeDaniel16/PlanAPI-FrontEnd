@@ -3,7 +3,7 @@
     <b-navbar>
       <template #brand>
         <b-navbar-item tag="router-link" :to="{ path: '/' }">
-          <p>Find my <i>tasks!</i></p>
+          <p class="titulo-inicial"><i>Plan!</i></p>
         </b-navbar-item>
       </template>
       <template #start> </template>

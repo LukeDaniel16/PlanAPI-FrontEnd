@@ -12,7 +12,7 @@
                 ></b-image>
               </div>
             </div>
-            <form @submit.prevent="cadastrarUsuario">
+            <form @submit.prevent="cadastrarUsuario" method="post">
               <b-field label="Nome" label-position="inside" class="my-1">
                 <b-input
                   placeholder="Ex: João de Barro"

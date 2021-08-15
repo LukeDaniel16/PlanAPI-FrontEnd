@@ -75,9 +75,7 @@ export default {
     return {}
   },
   methods: {
-    cadastrarUsuario: (event) => {
-      alert('alo goiania!')
-    },
+    cadastrarUsuario: () => {},
   },
 }
 </script>

@@ -4,15 +4,15 @@
       <div class="notification">
         <div class="content">
           <p><b-icon icon="signature" size="is-small" /> {{ item.nome }}</p>
-          <p><b-icon icon="stop" size="is-small" /> {{ item.statusTask }}</p>
-          <p><b-icon icon="clock" size="is-small" /> {{ item.dataTasK }}</p>
+          <p><b-icon icon="stop" size="is-small" /> {{ item.status }}</p>
+          <p>
+            <b-icon icon="clock" size="is-small" /> {{ item.prazoConclusao }}
+          </p>
           <p>
             <b-icon icon="envelope" size="is-small" />
-            {{ item.emailResponsavel }}
+            {{ item.emailAssociado }}
           </p>
-          <p>
-            <b-icon icon="file-alt" size="is-small" /> {{ item.descricaoTask }}
-          </p>
+          <p><b-icon icon="file-alt" size="is-small" /> {{ item.descricao }}</p>
         </div>
 
         <b-modal v-model="mostrarModalConclusao" :width="640">
@@ -84,32 +84,25 @@ export default {
   methods: {
     concluirTask() {},
     cancelarTask() {},
+    async buscarTasks() {
+      let idUsuario = localStorage.getItem('IdUsuarioLogado')
+      console.log(this.$route.path)
+      let paraMim = this.$route.path == '/task/paraMim'
+
+      try {
+        const data = await this.$axios.$post(
+          'https://localhost:44309/api/task/buscarTasks/' +
+            idUsuario +
+            '/' +
+            paraMim
+        )
+
+        this.datasTeste = data
+      } catch (error) {}
+    },
   },
   created() {
-    console.log(localStorage.getItem('IdUsuarioLogado'), 'Chamou!')
-    let teste = {
-      id: 1,
-      nome: 'AaAAAAa',
-      statusTask: 'Pendente',
-      dataTasK: '01/01/1991',
-      emailResponsavel: 'viniiciiusmelo@gmail.com',
-      descricaoTask: 'Descricao Primeira Task',
-    }
-
-    let teste2 = {
-      id: 2,
-      nome: 'BBBBB',
-      statusTask: 'Pendente',
-      dataTasK: '01/01/1992',
-      emailResponsavel: 'viniiciiusmelo@gmail.com',
-      descricaoTask: 'Descricao Segunda Task',
-    }
-    this.datasTeste.push(teste)
-    this.datasTeste.push(teste2)
-
-    console.log(this.datasTeste)
-
-    console.log(this.$route.path)
+    this.buscarTasks()
   },
 }
 </script>

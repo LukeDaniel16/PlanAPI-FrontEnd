@@ -49,18 +49,20 @@ export default {
   },
   methods: {
     async salvarTask() {
-
       let idUsuario = localStorage.getItem('IdUsuarioLogado')
 
       let objectTask = {
-        Nome: nomeTask,
-        PrazoConclusao: dataTasK,
-        Descricao : descricaoTask,
-        EmailAssociado : emailResponsavel,
+        Nome: this.nomeTask,
+        PrazoConclusao: this.dataTasK,
+        Descricao: this.descricaoTask,
+        EmailAssociado: this.emailResponsavel,
       }
 
       try {
-        const data = await this.$axios.$post('https://localhost:44309/api/usuarios/login'+ idUsuario , objectTask)
+        const data = await this.$axios.$post(
+          'https://localhost:44309/api/task/salvartask/' + idUsuario,
+          objectTask
+        )
         this.mensssageSucess('Task Criada Com Sucesso')
         this.$router.push('/task/porMim')
       } catch (error) {

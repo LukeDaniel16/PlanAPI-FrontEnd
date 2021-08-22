@@ -23,6 +23,12 @@
               to="/cadastro/entrar"
               >Entrar</b-button
             >
+            <b-button
+              type="is-primary is-outlined is-rounded"
+              tag="nuxt-link"
+              to="/task/task"
+              >Task</b-button
+            >
           </div>
         </b-navbar-item>
       </template>

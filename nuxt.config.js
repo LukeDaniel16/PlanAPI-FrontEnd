@@ -56,11 +56,18 @@ export default {
       }
     }],
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    proxy: true
+  },
+
+  proxy: {
+    '/api/': { target: 'https://localhost:44309/', pathRewrite: { '^/api/': '' }, changeOrigin: true }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

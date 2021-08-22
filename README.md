@@ -32,8 +32,8 @@ $ npm run start
   ### Funcionalidades criadas e pendentes:
   
 - [x] Tela de erro padrão (ao entrar em página inexistente, etc). 
-- [ ] Cadastro de usuário
-- [ ] Login de usuário
+- [x] Cadastro de usuário
+- [x] Login de usuário
 - [ ] Criação de nota individual
 - [ ] Cadastro de projeto
   

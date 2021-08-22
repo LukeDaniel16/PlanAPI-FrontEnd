@@ -85,30 +85,39 @@ export default {
     async concluirTask(item) {
       let agendamento = item
       console.log(agendamento)
+      let object = {
+        DescricaoConclusao: this.descricaoConclusao,
+      }
 
       try {
         const data = await this.$axios.$put(
-          'https://localhost:44309/api/usuarios/login'
+          'https://localhost:44309/api/task/concluirTask/' + agendamento.id,
+          object
         )
 
         this.mensssageSucess('Concluído com Sucesso')
-        this.$router.push(this.$route.path)
+        this.buscarTasks()
+        this.mostrarModalConclusao = false
       } catch (error) {
         mensssageError('Erro ao Concluir Task')
       }
     },
-     async cancelarTask(item) {
-
+    async cancelarTask(item) {
       let agendamento = item
       console.log(agendamento)
+      let object = {
+        DescricaoCancelamento: this.descricaoCancelamento,
+      }
 
       try {
         const data = await this.$axios.$put(
-          'https://localhost:44309/api/usuarios/login'
+          'https://localhost:44309/api/task/cancelarTask/' + agendamento.id,
+          object
         )
 
         this.mensssageSucess('Cancelado com Sucesso')
-        this.$router.push(this.$route.path)
+        this.buscarTasks()
+        this.mostrarModalCancelamento = false
       } catch (error) {
         mensssageError('Erro ao Cancelar Task')
       }

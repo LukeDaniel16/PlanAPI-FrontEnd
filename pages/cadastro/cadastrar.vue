@@ -15,6 +15,7 @@
             <form @submit.prevent="cadastrarUsuario" method="post">
               <b-field label="Nome" label-position="inside" class="my-1">
                 <b-input
+                  v-model="nome"
                   placeholder="Ex: João de Barro"
                   maxlength="160"
                   icon="user-tie"
@@ -22,6 +23,7 @@
               </b-field>
               <b-field label="Apelido" label-position="inside" class="my-1">
                 <b-input
+                  v-model="apelido"
                   placeholder="Joaozinho"
                   maxlength="120"
                   icon="user-ninja"
@@ -29,6 +31,7 @@
               </b-field>
               <b-field label="E-mail" label-position="inside" class="my-1">
                 <b-input
+                  v-model="email"
                   placeholder="joao.barro@gmail.com"
                   type="email"
                   maxlength="60"
@@ -36,7 +39,12 @@
                 ></b-input>
               </b-field>
               <b-field label="Senha" label-position="inside" class="my-1">
-                <b-input type="password" maxlength="30" icon="key"></b-input>
+                <b-input
+                  v-model="senha"
+                  type="password"
+                  maxlength="30"
+                  icon="key"
+                ></b-input>
               </b-field>
               <div class="block has-text-centered my-1">
                 <b-button
@@ -72,10 +80,47 @@
 export default {
   layout: 'cadastro/cadastroPrincipal',
   data() {
-    return {}
+    return {
+      nome: '',
+      apelido: '',
+      email: '',
+      senha: '',
+    }
   },
   methods: {
-    cadastrarUsuario: () => {},
+    async cadastrarUsuario() {
+      //objeto do usuario
+      let objectUser = {
+        Nome: this.nome,
+        Apellido: this.apelido,
+        Email: this.email,
+        Senha: this.senha,
+        DataCriacaoConta: new Date(),
+      }
+
+      try {
+        const data = await this.$axios.$post(
+          'https://localhost:44309/api/usuarios/cadastro',
+          objectUser
+        )
+        this.mensssageSucess('Cadastrado Com Sucesso');
+        this.$router.push({path:'task/paramim'});
+      } catch (error) {
+        mensssageError('Erro ao Cadastrar Usuario')
+      }
+    },
+    mensssageSucess(mensagem) {
+      this.$buefy.toast.open({
+        message: mensagem,
+        type: 'is-success',
+      })
+    },
+    mensssageError(mensagem) {
+      this.$buefy.toast.open({
+        message: mensagem,
+        type: 'is-danger',
+      })
+    },
   },
 }
 </script>

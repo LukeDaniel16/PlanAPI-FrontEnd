@@ -22,7 +22,12 @@
               ></b-input>
             </b-field>
             <b-field label="Senha" label-position="inside">
-              <b-input v-model="senha" type="password" maxlength="30" icon="key"></b-input>
+              <b-input
+                v-model="senha"
+                type="password"
+                maxlength="30"
+                icon="key"
+              ></b-input>
             </b-field>
             <div class="block has-text-centered">
               <b-button type="is-primary is-outlined" expanded icon-right="user"
@@ -47,13 +52,32 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   layout: 'cadastro/cadastroPrincipal',
   data() {
     return {
-      senha:'',
-      login:''
+      senha: '',
+      login: '',
     }
+  },
+  methods: {
+    login() {
+      loginObject = {
+        Email : this.login,
+        Senha : this.senha
+      }
+
+      axios
+        .post('http://localhost:8000/api/users',loginObject)
+        .then((res) => {
+          console.log(res.data)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    },
   },
 }
 </script>

@@ -30,7 +30,11 @@
               ></b-input>
             </b-field>
             <div class="block has-text-centered">
-              <b-button type="is-primary is-outlined" expanded icon-right="user"
+              <b-button
+                type="is-primary is-outlined"
+                expanded
+                icon-right="user"
+                v-on:click="loginUsuario"
                 ><strong>Entrar</strong></b-button
               >
             </div>
@@ -63,20 +67,18 @@ export default {
     }
   },
   methods: {
-    login() {
-      loginObject = {
-        Email : this.login,
-        Senha : this.senha
+    async loginUsuario() {
+      let loginObject = {
+        Email: this.login,
+        Senha: this.senha,
       }
 
-      axios
-        .post('http://localhost:8000/api/users',loginObject)
-        .then((res) => {
-          console.log(res.data)
-        })
-        .catch((error) => {
-          console.log(error)
-        })
+      const data = await this.$axios.$post(
+        'https://localhost:44309/api/usuarios/login',
+        loginObject
+      )
+
+      console.log(data)
     },
   },
 }

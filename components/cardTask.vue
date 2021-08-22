@@ -27,7 +27,7 @@
             ></b-input>
           </b-field>
 
-          <b-button type="is-success" outlined v-on:click="concluirTask"
+          <b-button type="is-success" outlined v-on:click="concluirTask(item)"
             >Concluir
           </b-button>
         </b-modal>
@@ -45,7 +45,7 @@
             ></b-input>
           </b-field>
 
-          <b-button type="is-success" outlined v-on:click="cancelarTask"
+          <b-button type="is-success" outlined v-on:click="cancelarTask(item)"
             >Concluir
           </b-button>
         </b-modal>
@@ -82,8 +82,49 @@ export default {
     }
   },
   methods: {
-    concluirTask() {},
-    cancelarTask() {},
+    async concluirTask(item) {
+      let agendamento = item
+      console.log(agendamento)
+
+      try {
+        const data = await this.$axios.$put(
+          'https://localhost:44309/api/usuarios/login'
+        )
+
+        this.mensssageSucess('Concluído com Sucesso')
+        this.$router.push(this.$route.path)
+      } catch (error) {
+        mensssageError('Erro ao Concluir Task')
+      }
+    },
+     async cancelarTask(item) {
+
+      let agendamento = item
+      console.log(agendamento)
+
+      try {
+        const data = await this.$axios.$put(
+          'https://localhost:44309/api/usuarios/login'
+        )
+
+        this.mensssageSucess('Cancelado com Sucesso')
+        this.$router.push(this.$route.path)
+      } catch (error) {
+        mensssageError('Erro ao Cancelar Task')
+      }
+    },
+    mensssageSucess(mensagem) {
+      this.$buefy.toast.open({
+        message: mensagem,
+        type: 'is-success',
+      })
+    },
+    mensssageError(mensagem) {
+      this.$buefy.toast.open({
+        message: mensagem,
+        type: 'is-danger',
+      })
+    },
     async buscarTasks() {
       let idUsuario = localStorage.getItem('IdUsuarioLogado')
       console.log(this.$route.path)

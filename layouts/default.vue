@@ -27,6 +27,7 @@
         </b-navbar-item>
       </template>
     </b-navbar>
+    <img class="center" src="..\assets\images\taskwallpaper.png" alt="Fundo" />
     <Nuxt />
   </div>
 </template>
@@ -40,5 +41,11 @@ p {
 }
 .is-link {
   color: #023e8a;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 </style>

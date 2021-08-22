@@ -52,6 +52,7 @@
                   type="is-primary is-outlined"
                   expanded
                   icon-right="user-plus"
+                  v-on:click="cadastrarUsuario"
                 >
                   <strong>Cadastrar</strong></b-button
                 >
@@ -92,7 +93,7 @@ export default {
       //objeto do usuario
       let objectUser = {
         Nome: this.nome,
-        Apellido: this.apelido,
+        Apelido: this.apelido,
         Email: this.email,
         Senha: this.senha,
         DataCriacaoConta: new Date(),
@@ -103,8 +104,11 @@ export default {
           'https://localhost:44309/api/usuarios/cadastro',
           objectUser
         )
-        this.mensssageSucess('Cadastrado Com Sucesso');
-        this.$router.push({path:'task/paramim'});
+
+        localStorage.setItem('IdUsuarioLogado', data)
+
+        this.mensssageSucess('Cadastrado Com Sucesso')
+        this.$router.push('/task/paraMim')
       } catch (error) {
         mensssageError('Erro ao Cadastrar Usuario')
       }

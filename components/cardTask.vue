@@ -59,7 +59,7 @@
           </b-button>
 
           <b-button
-            v-on:click=" mostrarModalCancelamento= true"
+            v-on:click="mostrarModalCancelamento = true"
             type="is-danger"
             outlined
             >Cancelar</b-button
@@ -82,14 +82,11 @@ export default {
     }
   },
   methods: {
-    concluirTask() {
-
-    },
-    cancelarTask() {
-      
-    },
+    concluirTask() {},
+    cancelarTask() {},
   },
   created() {
+    console.log(localStorage.getItem('IdUsuarioLogado'), 'Chamou!')
     let teste = {
       id: 1,
       nome: 'AaAAAAa',
@@ -111,6 +108,8 @@ export default {
     this.datasTeste.push(teste2)
 
     console.log(this.datasTeste)
+
+    console.log(this.$route.path)
   },
 }
 </script>

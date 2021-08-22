@@ -73,12 +73,32 @@ export default {
         Senha: this.senha,
       }
 
-      const data = await this.$axios.$post(
-        'https://localhost:44309/api/usuarios/login',
-        loginObject
-      )
+      try {
+        const data = await this.$axios.$post(
+          'https://localhost:44309/api/usuarios/login',
+          loginObject
+        )
 
-      console.log(data)
+        localStorage.setItem('IdUsuarioLogado', data)
+
+        this.mensssageSucess('Logado com Sucesso')
+        this.$router.push('/task/paraMim')
+        console.log(data)
+      } catch (error) {
+        mensssageError('Erro ao fazer login')
+      }
+    },
+    mensssageSucess(mensagem) {
+      this.$buefy.toast.open({
+        message: mensagem,
+        type: 'is-success',
+      })
+    },
+    mensssageError(mensagem) {
+      this.$buefy.toast.open({
+        message: mensagem,
+        type: 'is-danger',
+      })
     },
   },
 }

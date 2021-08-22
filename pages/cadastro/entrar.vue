@@ -15,13 +15,14 @@
             <b-field label="E-mail" label-position="inside">
               <b-input
                 placeholder="joao.barro@gmail.com"
+                v-model="login"
                 type="email"
                 maxlength="60"
                 icon="envelope"
               ></b-input>
             </b-field>
             <b-field label="Senha" label-position="inside">
-              <b-input type="password" maxlength="30" icon="key"></b-input>
+              <b-input v-model="senha" type="password" maxlength="30" icon="key"></b-input>
             </b-field>
             <div class="block has-text-centered">
               <b-button type="is-primary is-outlined" expanded icon-right="user"
@@ -49,7 +50,10 @@
 export default {
   layout: 'cadastro/cadastroPrincipal',
   data() {
-    return {}
+    return {
+      senha:'',
+      login:''
+    }
   },
 }
 </script>

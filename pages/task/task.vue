@@ -55,7 +55,7 @@ export default {
       let objectTask = {
         Nome: nomeTask,
         PrazoConclusao: dataTasK,
-        Descricao = descricaoTask,
+        Descricao : descricaoTask,
         EmailAssociado : emailResponsavel,
       }
 

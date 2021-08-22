@@ -39,7 +39,7 @@ $ npm run start
   
   
 <h4 align="center"> 
-  Status do projeto:<br> :computer: Find my tasks :white_check_mark: - Em desenvolvimento... :computer:
+  Status do projeto:<br> :computer: Plan! :white_check_mark: - Em desenvolvimento... :computer:
 </h4>
 
 Para maiores detalhes, visite a documentação oficial do Nuxt.JS [Nuxt.js docs](https://nuxtjs.org).

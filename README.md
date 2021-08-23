@@ -34,8 +34,8 @@ $ npm run start
 - [x] Tela de erro padrão (ao entrar em página inexistente, etc). 
 - [x] Cadastro de usuário
 - [x] Login de usuário
-- [ ] Criação de nota individual
-- [ ] Cadastro de projeto
+- [x] Criação de nota individual
+- [x] Cadastro de projeto
   
   
 <h4 align="center"> 

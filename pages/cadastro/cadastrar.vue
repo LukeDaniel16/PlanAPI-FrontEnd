@@ -52,7 +52,6 @@
                   type="is-primary is-outlined"
                   expanded
                   icon-right="user-plus"
-                  v-on:click="cadastrarUsuario"
                 >
                   <strong>Cadastrar</strong></b-button
                 >
@@ -106,9 +105,9 @@ export default {
         )
 
         localStorage.setItem('IdUsuarioLogado', data)
-
-        this.mensssageSucess('Cadastrado Com Sucesso')
-        this.$router.push('/task/paraMim')
+        console.log(data)
+        this.mensssageSucess('Cadastrado com Sucesso')
+        this.$router.push('/cadastro/entrar')
       } catch (error) {
         mensssageError('Erro ao Cadastrar Usuario')
       }

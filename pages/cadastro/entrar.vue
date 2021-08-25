@@ -80,7 +80,6 @@ export default {
         )
 
         localStorage.setItem('IdUsuarioLogado', data)
-
         this.mensssageSucess('Logado com Sucesso')
         this.$router.push('/task/paraMim')
         console.log(data)
